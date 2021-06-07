@@ -1,6 +1,6 @@
 @echo off
 color 0a
-TITLE Windows 10 Enterprise G Convert by https://03k.org
+TITLE Windows 10 Enterprise GConvert by https://03k.org
 ::For deployment example only, please modify it to your own KMS server
 set kmsserver=kms.03k.org
 ::For deployment example only, please modify it to your own KMS server
@@ -37,7 +37,7 @@ reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtection
     reg delete "%%d\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\55c92734-d682-4d71-983e-d6ec3f16059f" /f 1>nul 2>nul
 ))
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /xpr
-echo Windows 10 Enterprise G Convert Completed
+echo Windows 10 Enterprise GConvert Completed
 echo Read the help information：https://github.com/lixuy/EnterpriseGconvert
 timeout 8
 exit
