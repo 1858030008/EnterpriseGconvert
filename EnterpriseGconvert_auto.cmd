@@ -1,9 +1,9 @@
 @echo off
-color 1F
-TITLE Windows 10 Enterprise G转换处理 by https://03k.org
-::仅作部署示例，请修改为你自己的KMS服务器
+color 0a
+TITLE Windows 10 Enterprise G Convert by https://03k.org
+::For deployment example only, please modify it to your own KMS server
 set kmsserver=kms.03k.org
-::仅作部署示例，请修改为你自己的KMS服务器
+::For deployment example only, please modify it to your own KMS server
 :: Get Administrator Rights
 set _Args=%*
 if "%~1" NEQ "" (
@@ -22,14 +22,14 @@ if not exist "%skudir%\EnterpriseG.cer" goto error
 expand -r -F:* %skudir%\EnterpriseG.cer %skudir%\ 1>nul 2>nul
 del /s /f /q %skudir%\EnterpriseG.cer
 cls
-echo 正在安装证书，请稍候...
+echo Installing the certificate, please wait...
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /rilc 1>nul 2>nul
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" /v NoGenTicket /t REG_DWORD /d 1 /f 1>nul 2>nul
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /act-type 0 1>nul 2>nul
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckhc 1>nul 2>nul
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /skms %kmsserver% 1>nul 2>nul
-echo 正在连接指定服务器激活，请稍候...
+echo Connecting to the specified server for activation, please wait...
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ato
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs /ckms 1>nul 2>nul
 reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\55c92734-d682-4d71-983e-d6ec3f16059f" /f 1>nul 2>nul
@@ -37,13 +37,13 @@ reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtection
     reg delete "%%d\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\55c92734-d682-4d71-983e-d6ec3f16059f" /f 1>nul 2>nul
 ))
 %windir%\System32\cscript.exe //nologo %windir%\System32\slmgr.vbs  /xpr
-echo Windows 10 Enterprise G转换激活执行完成
-echo 阅读帮助信息：https://github.com/lixuy/EnterpriseGconvert
+echo Windows 10 Enterprise G Convert Completed
+echo Read the help information锛歨ttps://github.com/lixuy/EnterpriseGconvert
 timeout 8
 exit
 :error
 cls
-echo 无法释放证书，请确认是否用右键管理员运行或者文件是否损坏
+echo Unable to release the certificate, please confirm whether it is run by the right-click administrator or the file is damaged
 timeout 3
 exit
 -----BEGIN CERTIFICATE-----
