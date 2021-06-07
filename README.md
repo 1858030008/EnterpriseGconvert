@@ -1,26 +1,26 @@
-# 适用于Win10 1703+的Enterprise G转换处理/批量激活部署程序
+# Enterprise G conversion processing/mass activation deployment program for Win10 1703+
 https://03k.org/1803entg.html  
-本程序通过导入证书来转换1703+的Windows 10系统为Enterprise G，并且转换也是可逆的，例如原来是企业版，想要用回去企业版可以直接导入企业版的key即可，企业G有两个好处，一个是就是400年的kms宽限期，还有就是无法升级版本，对于不想让Windows更新升级的同学来说也方便，并且也能随时转换回去。  
+This program converts the 1703+ Windows 10 system to Enterprise G by importing the certificate, and the conversion is also reversible. For example, it was originally the enterprise version. If you want to use the enterprise version back, you can directly import the key of the enterprise version. Enterprise G has two One advantage is the 400-year kms grace period and the inability to upgrade the version. It is also convenient for students who do not want to update Windows and can also be converted back at any time.  
 
-## [转换程序下载](https://github.com/lixuy/EnterpriseGconvert/releases/download/1/EnterpriseGconvert.cmd).
-#### 注：本程序仅执行转换操作，请自行处理系统激活。
-下载后右键管理员运行即可。
+## [Convert program download](https://github.com/lixuy/EnterpriseGconvert/releases/download/1/EnterpriseGconvert.cmd).
+#### Note: This program only performs conversion operations, please handle system activation by yourself.
+After downloading, right-click the administrator to run it.
 
-## [转换程序_一键自动激活版下载](https://github.com/lixuy/EnterpriseGconvert/releases/download/1/EnterpriseGconvert_auto.cmd).
-#### 注：本程序仅供部署参考，请把kmsserver参数修改成自己的服务器地址。
+## [Convert program one-click automatic activation version download](https://github.com/lixuy/EnterpriseGconvert/releases/download/1/EnterpriseGconvert_auto.cmd).
+#### Note: This program is for deployment reference only, please modify the kmsserver parameter to your own server address.
 
-## 逆转换回去企业版示例：
+## Example of reverse convert back to Enterprise Edition:
 >slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43  
-其他版本参考 https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys  
+Other version reference https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys  
 
-## 已测试过的系统版本  
-#### 以下是测试通过的版本
+## System version tested 
+#### The following is the version that passed the test
 >Windows 10 Home/Professional/Education/Enterprise 1703  
 Windows 10 Home/Professional/Education/Enterprise 1709  
 Windows 10 Home/Professional/Education/Enterprise 1803  
 Windows 10 Home/Professional/Education/Enterprise 1809  
 Windows 10 LTSC 2019  
-#### 以下是测试不通过的版本
+#### The following is the version that failed the test
 >Windows 10 Home/Professional/Education/Enterprise 1511  
 Windows 10 Home/Professional/Education/Enterprise 1607  
 Windows 10 LTSB 2015  
